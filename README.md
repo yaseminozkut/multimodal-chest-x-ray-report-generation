@@ -34,8 +34,7 @@ Fine-tuned LLaMA 3.2 Vision (11B) using 4-bit QLoRA for automated radiology repo
 ## Project Structure
 
 ```
-├── train.py                 # Main training script
-├── train_single_gpu.py      # Single GPU training (alternative)
+├── train.py                 # Training script
 ├── train.slurm              # SLURM job submission script
 ├── dataset.py               # Data loader
 ├── xray_dataset.py          # X-ray dataset class
@@ -69,7 +68,7 @@ METADATA_FILE=/path/to/your/metadata.xlsx
 ### 3. Train
 
 ```bash
-# Single GPU training
+# Local training
 python train.py
 
 # With SLURM (recommended)
