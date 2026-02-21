@@ -34,15 +34,20 @@ Fine-tuned LLaMA 3.2 Vision (11B) using 4-bit QLoRA for automated radiology repo
 ## Project Structure
 
 ```
-├── train.py                 # Training script
-├── train.slurm              # SLURM job submission script
-├── dataset.py               # Data loader
-├── xray_dataset.py          # X-ray dataset class
-├── similarity_metrics.py    # BLEU, ROUGE evaluation
-├── calculate_metrics.py     # Quick metrics calculation
-├── check_report.py          # Report utilities
+├── src/
+│   ├── train.py             # Main training script
+│   ├── dataset.py           # Data loader
+│   └── xray_dataset.py      # X-ray dataset class
+├── eval/
+│   ├── calculate_metrics.py # BLEU/ROUGE calculation
+│   ├── similarity_metrics.py
+│   └── similarity.py
+├── scripts/
+│   └── train.slurm          # SLURM job submission
+├── utils/
+│   └── check_report.py      # Report utilities
 ├── requirements.txt
-├── cache/                   # Auto-generated dataset cache
+├── .env.example
 └── outputs/                 # Model checkpoints (gitignored)
 ```
 
@@ -69,13 +74,13 @@ METADATA_FILE=/path/to/your/metadata.xlsx
 
 ```bash
 # Local training
-python train.py
+python src/train.py
 
 # With SLURM (recommended)
-sbatch train.slurm
+sbatch scripts/train.slurm
 
 # Or specify a GPU type
-sbatch --gres=gpu:a6000:1 train.slurm
+sbatch --gres=gpu:a6000:1 scripts/train.slurm
 ```
 
 Note: First run converts the dataset (~17 min), subsequent runs load from cache.

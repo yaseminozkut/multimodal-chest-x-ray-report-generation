@@ -25,7 +25,7 @@ conda activate mllama
 cd /research/nfs_yilmaz_15/yasemin/other_projects/old_projects/mllama
 
 # Run training
-python train.py
+python src/train.py
 
 echo "---"
 echo "End time: $(date)"
