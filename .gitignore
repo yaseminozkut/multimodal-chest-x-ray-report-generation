@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Unsloth cache (auto-generated)
+unsloth_compiled_cache/
+
+# Model outputs - upload to HuggingFace Hub instead of GitHub
+outputs/
+outputs_old/
+
+# MIMIC-CXR data (restricted - requires PhysioNet access)
+generated_reports.json
+reference_reports.json
+data/
+
+# Cache
+cache/
+
+# Logs
+logs/
+*.log
+*.out
+wandb/
+runs/
+
+# SLURM
+slurm-*.out
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.key
+*credentials*
